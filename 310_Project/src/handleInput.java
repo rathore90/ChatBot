@@ -257,8 +257,13 @@ public class handleInput {
 				matchfound = true;
 				break;
 			}
-			if (!input.endsWith("?")) {
+			if (!input.endsWith("?")&&(!input.equals("bye"))) {
 				data = "nothing";
+				matchfound = true;
+				break;
+			}
+			if(input.equals("bye")) {
+				data = "bye";
 				matchfound = true;
 				break;
 			}

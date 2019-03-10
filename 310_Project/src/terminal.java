@@ -30,7 +30,7 @@ public class terminal {
 			// through response/questions
 			if (genderchosen == true && nameknown == true) {
 				data = inputHandler.parseInput(userinput);
-				if (data.equals("nothing")) {
+				if (data.equals("nothing")&&(!data.equals("bye"))) {
 					qresponse[0] = "what";
 					while (qresponse[0].equals("what")) {
 						question = questionAsker.ask();
