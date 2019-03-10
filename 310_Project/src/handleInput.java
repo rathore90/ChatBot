@@ -257,12 +257,12 @@ public class handleInput {
 				matchfound = true;
 				break;
 			}
-			if (!input.endsWith("?")&&(!input.equals("bye"))) {
+			if (!input.endsWith("?")&&(!input.equalsIgnoreCase("bye"))) {
 				data = "nothing";
 				matchfound = true;
 				break;
 			}
-			if(input.equals("bye")) {
+			if(input.equalsIgnoreCase("bye")) {
 				data = "bye";
 				matchfound = true;
 				break;
