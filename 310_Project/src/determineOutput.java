@@ -30,6 +30,7 @@ public class determineOutput {
 		 ArrayList<String> likeMovies = personality.getLikesMovies();
 		 ArrayList<String> likefood = personality.getLikesFoods();
 
+		 System.out.println(data);
 		 /**Greeting*/
 		 if(data.equals("greeting")) {
 			String greeting = returnGreeting();
@@ -65,7 +66,7 @@ public class determineOutput {
 		 }
 		 /**invalid*/
 		 if(data.equals("invalid")) {
-		 hash_map.put("invalid", "I am sorry, I don't understand the question.");
+		 hash_map.put("invalid", "I am sorry, can you please repeat?");
 		 }
 		 /**qlikes */
 		 if(data.equals("qhobbies")) {

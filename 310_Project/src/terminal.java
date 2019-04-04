@@ -41,7 +41,7 @@ public class terminal {
 					}
 					if (userinput.endsWith("?")) {
 						botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
-						System.out.println(chatbotname + ": " + botoutput);
+						//System.out.println(chatbotname + ": " + botoutput);
 					}
 					botoutput = questionAsker.afterAsk(qresponse, qdata);
 				} else {

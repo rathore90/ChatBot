@@ -74,7 +74,9 @@ public class handleInput {
 	 * @return String converted to lowercase, with all punctuation removed
 	 */
 	public String processInput(String input) {
-		String output = input.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+		//String output = input.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+		String fixSpaces = input.trim().replaceAll(" +", " ");
+		String output = fixSpaces.replaceAll("[\\p{Punct}&&[^?]]+", "");
 		return output;
 	}
 

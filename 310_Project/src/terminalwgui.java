@@ -56,7 +56,8 @@ public class terminalwgui extends Application{
 	    actionBtn.setPrefWidth(100);
 	    actionBtn.setPrefHeight(50);
 	    
-	    TextField outField = new TextField ("You are on a blind date. Would you like to date a man or a woman?");
+	    @SuppressWarnings("restriction")
+		TextField outField = new TextField ("You are on a blind date. Would you like to date a man or a woman?");
 	    outField.setPrefWidth(500);
 	    outField.setPrefHeight(75);
 	   
@@ -169,7 +170,7 @@ public class terminalwgui extends Application{
 					outField.setText(chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(result)));
 				}
 				// End conversation if user types "bye"
-				if (inputHandler.parseInput(userinput).equals("bye"))				
+				if (inputHandler.parseInput(userinput).equals("bye"))			
 				turn = !turn;
 		}
 	});		
