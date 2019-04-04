@@ -138,7 +138,8 @@ public class POSandNER {
         // read some text in the text variable
        // String text = "What is the Weather in Kelowna right now?";
         //String text = "I am a computer science student at UBC Okanagan";
-        String text = "I do not like Donald Trumph";
+        String text1 = "Did Did you just eat that napkin? ";
+        String text = text1.replaceAll("[^a-zA-Z ]", "");
         // create an empty Annotation just with the given text
         Annotation document = new Annotation(text);
         //Annotation document = new Annotation(s);
@@ -149,6 +150,7 @@ public class POSandNER {
 
         List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
         String pos = null;
+        String s = "";
         for (CoreMap sentence : sentences) {
             // traversing the words in the current sentence
             // a CoreLabel is a CoreMap with additional token-specific methods
@@ -161,7 +163,11 @@ public class POSandNER {
                 String ne = token.get(CoreAnnotations.NamedEntityTagAnnotation.class);
 
                System.out.println(String.format("Print: word: [%s] pos: [%s] ne: [%s]", word, pos, ne));
+               if(pos.equals("VBD")) {
+            	   s += " "+word;
+               }
             }
+            System.out.println(s);
         }
 		//return pos;
 	}
