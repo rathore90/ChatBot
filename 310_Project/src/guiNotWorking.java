@@ -1,6 +1,9 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import tec.uom.lib.common.util.SystemOfUnitsReporter;
+
 import javax.swing.JScrollPane;
 
 import java.awt.Color;
@@ -11,8 +14,25 @@ import java.awt.event.KeyEvent;
 import java.lang.Math;
 
 public class guiNotWorking extends JFrame implements KeyListener{
+	public handleInput inputHandler = new handleInput();
+	public determineOutput outputDeterminer = new determineOutput();
+	public Personality personality = new Personality();
+	public questionAsker questionAsker = new questionAsker();
+	public boolean genderchosen = false;
+	public boolean turn = false;
+	public boolean nameknown = false;
+	public String username = "Human";
+	public String chatbotname = "CHATBOTNAME";
+	public String botoutput = "";
+	public String data = "";
+	public String qdata = "";
+	public String qresponse[] = new String[2];
+	public String question[] = new String[2];	
+	public String userinput = "";
+	public boolean askName = false;
+	public String result;
 
-	JPanel panel=new JPanel();
+	JPanel p=new JPanel();
 	JTextArea dialog=new JTextArea(20,50);
 	JTextArea input=new JTextArea(1,50);
 	JScrollPane scroll=new JScrollPane(
@@ -20,23 +40,6 @@ public class guiNotWorking extends JFrame implements KeyListener{
 		JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 		JScrollPane.HORIZONTAL_SCROLLBAR_NEVER
 	);
-
-	handleInput inputHandler = new handleInput();
-	determineOutput outputDeterminer = new determineOutput();
-	// Initialize required attributes and objects
-			// Used for processing input
-			Personality p = new Personality();
-			questionAsker questionAsker = new questionAsker();
-			// Initialize booleans for determining steps in conversation
-			boolean genderchosen = false;
-			boolean turn = false;
-			boolean nameknown = false;
-			// Initialize names for identifying speakers
-			String username = "Human";
-			String chatbotname = "CHATBOTNAME";
-			String botoutput = "";
-			String data = "";
-			String qdata = "";
 	
 	String[][] chatBot={
 		//standard greetings
@@ -66,33 +69,37 @@ public class guiNotWorking extends JFrame implements KeyListener{
 		dialog.setEditable(false);
 		input.addKeyListener(this);
 	
-		panel.add(scroll);
-		panel.add(input);
-		panel.setBackground(new Color(255,200,0));
-		add(panel);
+		p.add(scroll);
+		p.add(input);
+		p.setBackground(new Color(255,200,0));
+		add(p);
 		
 		setVisible(true);
+		//dialog.setText("Hit enter to run the gui"  + "\n");
+		
+		
 	}
 	
 	public void keyPressed(KeyEvent e){
+		//dialog.setText("Would You Liked To Date A Woman Or Man?"  );
+		if(e.getKeyCode()==KeyEvent.VK_ENTER){
+			input.setEditable(false);
+		// Determine desired gender from user
+			
+		
+	}
+		
+		
+		
+		
+		/*
 		if(e.getKeyCode()==KeyEvent.VK_ENTER){
 			input.setEditable(false);
 			//-----grab quote-----------
 			String quote=input.getText();
 			input.setText("");
-			addText("-->You: "+quote);
-			//quote.trim();
-		
-			if(quote.endsWith("?")) {
-				botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
-				addText(chatbotname + ": " + botoutput+"\n");
-			}
-			}
-			
-			
-			
-			
-			/*
+			addText("-->You:\t"+quote);
+			quote.trim();
 			while(
 				quote.charAt(quote.length()-1)=='!' ||
 				quote.charAt(quote.length()-1)=='.' ||
@@ -108,8 +115,8 @@ public class guiNotWorking extends JFrame implements KeyListener{
 			2:we did find something
 			*/
 			//-----check for matches----
-			/*
-			int j=0;//which group we're checking
+		/*	
+		int j=0;//which group we're checking
 			while(response==0){
 				if(inArray(quote.toLowerCase(),chatBot[j*2])){
 					response=2;
@@ -127,13 +134,13 @@ public class guiNotWorking extends JFrame implements KeyListener{
 				int r=(int)Math.floor(Math.random()*chatBot[chatBot.length-1].length);
 				addText("\n-->Michael\t"+chatBot[chatBot.length-1][r]);
 			}
-			*/
+		*/	
 			addText("\n");
-		}
-	
+		//}
+	}
 	
 	public void keyReleased(KeyEvent e){
-		if(e.getKeyCode()==KeyEvent.VK_ENTER){	
+		if(e.getKeyCode()==KeyEvent.VK_ENTER){
 			input.setEditable(true);
 		}
 	}
