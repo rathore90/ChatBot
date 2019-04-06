@@ -139,7 +139,17 @@ public class FinalGui extends JFrame implements KeyListener {
 						}else if(nameEntity.equals("PERSON")) {
 							word = nlp.returnWord(nlpInput);
 							txtChat.append(chatbotname + ": " + "I dont know " + word + "\n");
-						}
+						}else if(POS.equals(".")) {
+								word = nlp.returnNoun(nlpInput);
+								txtChat.append(chatbotname + ": " + "What.....? what about the " + word + "\n");
+						}else if(POS.equals("NNP")) {
+							word = nlp.returnNoun(nlpInput);
+							txtChat.append(chatbotname + ": " + "You are " + word + "\n");
+					}else if(POS.equals("JJ")) {
+						word = nlp.returnWord(nlpInput);
+						txtChat.append(chatbotname + ": " + "You are " + word + " too" + "\n");
+				}
+						
 						txtEnter.setText("");
 				/*
 				else if (genderchosen == true && nameknown == true && profasker == true && profResponse == true) {
