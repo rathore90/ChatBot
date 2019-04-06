@@ -30,7 +30,7 @@ public class determineOutput {
 		 ArrayList<String> likeMovies = personality.getLikesMovies();
 		 ArrayList<String> likefood = personality.getLikesFoods();
 
-		 System.out.println(data);
+		// System.out.println(data);
 		 /**Greeting*/
 		 if(data.equals("greeting")) {
 			String greeting = returnGreeting();

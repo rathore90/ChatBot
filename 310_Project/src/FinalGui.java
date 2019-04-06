@@ -60,7 +60,6 @@ public class FinalGui extends JFrame implements KeyListener {
 			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, 
 			JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED
 		); // scrolling 
-
 	private JLabel background;
 	private ImageIcon image;
 */ 
@@ -124,7 +123,7 @@ public class FinalGui extends JFrame implements KeyListener {
 					//System.out.println(username + ":");
 					//userinput = inputHandler.getUserInput();
 					data = inputHandler.parseInput(userinput);
-					if (data.equals("nothing")&&(!data.equals("bye"))) {
+					if ((data.equals("invalid")||(data.equals("nothing")))&&(!data.equals("bye"))) {
 						nlpInput = inputHandler.processInput(userinput);
 						
 						//System.out.println(nlpInput);
@@ -137,8 +136,10 @@ public class FinalGui extends JFrame implements KeyListener {
 						}else if(nameEntity.equals("LOCATION")) {
 							word = nlp.returnWord(nlpInput);
 							txtChat.append(chatbotname + ": " + "this is a location " + word + " too." + "\n");
+						}else if(nameEntity.equals("PERSON")) {
+							word = nlp.returnWord(nlpInput);
+							txtChat.append(chatbotname + ": " + "I dont know " + word + "\n");
 						}
-				
 						txtEnter.setText("");
 				/*
 				else if (genderchosen == true && nameknown == true && profasker == true && profResponse == true) {
@@ -152,7 +153,7 @@ public class FinalGui extends JFrame implements KeyListener {
 						qresponse = inputHandler.parseQResponse(userinput.toString(), qdata, p);
 						
 					*/	
-						if (userinput.endsWith("?")) {
+						if (!data.equals("invalid")&&userinput.endsWith("?")) {
 							botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
 							txtChat.append(chatbotname + ":" + botoutput);
 						}

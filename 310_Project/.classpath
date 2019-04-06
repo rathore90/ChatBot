@@ -27,7 +27,7 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ratho/Downloads/languagetool-core-4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ratho/git/ChatBot/languagetool-core-4.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ratho/.gradle/caches/modules-2/files-2.1/org.languagetool/languagetool-core/4.4/4ebd93bb19f4302e6c5c3777cc0aa2c1d593c64c/languagetool-core-4.4.jar" sourcepath="C:/Users/ratho/.gradle/caches/modules-2/files-2.1/org.languagetool/languagetool-core/4.4/b986d4e91c246c3abb6f9f390cf42849f1209843/languagetool-core-4.4-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ratho/.gradle/caches/modules-2/files-2.1/com.intellij/annotations/12.0/bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539/annotations-12.0.jar" sourcepath="C:/Users/ratho/.gradle/caches/modules-2/files-2.1/com.intellij/annotations/12.0/4943118f12f706a8820f73529fcb8f5853bc0fed/annotations-12.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ratho/.m2/repository/org/languagetool/languagetool-core/4.5/languagetool-core-4.5.jar" sourcepath="C:/Users/ratho/.m2/repository/org/languagetool/languagetool-core/4.5/languagetool-core-4.5-sources.jar">
@@ -39,7 +39,6 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ratho/Downloads/language-all-4.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ratho/.gradle/caches/modules-2/files-2.1/org.languagetool/language-en/4.4/a391243c62390932d88b409d1c41667a0e6d177/language-en-4.4.jar" sourcepath="C:/Users/ratho/.gradle/caches/modules-2/files-2.1/org.languagetool/language-en/4.4/fcc593abf67ca5358518384129ed1d022e19fe3/language-en-4.4-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -29,7 +29,9 @@ public class terminal {
 			// Loop is called after desired gender and name are chosen, and begins to loop
 			// through response/questions
 			if (genderchosen == true && nameknown == true) {
+				
 				data = inputHandler.parseInput(userinput);
+				System.out.println(data);
 				if (data.equals("nothing")&&(!data.equals("bye"))) {
 					qresponse[0] = "what";
 					while (qresponse[0].equals("what")) {
@@ -44,9 +46,9 @@ public class terminal {
 						//System.out.println(chatbotname + ": " + botoutput);
 					}
 					botoutput = questionAsker.afterAsk(qresponse, qdata);
+				System.out.println(botoutput);
 				} else {
 					botoutput = outputDeterminer.respond(data, p);
-
 				}
 				System.out.print(chatbotname + ": " + botoutput);
 			}

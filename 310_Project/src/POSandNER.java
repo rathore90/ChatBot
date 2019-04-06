@@ -138,8 +138,10 @@ public class POSandNER {
         // read some text in the text variable
        // String text = "What is the Weather in Kelowna right now?";
         //String text = "I am a computer science student at UBC Okanagan";
-        String text1 = "Hi hello";
-        String text = text1.replaceAll("[^a-zA-Z ]", "");
+        String text1 = "Do you know place called Kelowna?";
+        String fixSpaces = text1.trim().replaceAll(" +", " ");
+		String text = fixSpaces.replaceAll("[\\p{Punct}&&[^?]]+", "");
+        //String text = text1.replaceAll("[^a-zA-Z ]", "");
         // create an empty Annotation just with the given text
         Annotation document = new Annotation(text);
         //Annotation document = new Annotation(s);
@@ -163,8 +165,10 @@ public class POSandNER {
                 String ne = token.get(CoreAnnotations.NamedEntityTagAnnotation.class);
 
                System.out.println(String.format("Print: word: [%s] pos: [%s] ne: [%s]", word, pos, ne));
-               if(pos.equals("VBD")) {
-            	   s += " " + word;
+               System.out.println(pos);
+               if(pos.equals(".") && ne.equals("LOCATION")) {
+            	   //s +=  word;
+            	   System.out.println("Yes i did it");
                }
             }
             System.out.println(s);
